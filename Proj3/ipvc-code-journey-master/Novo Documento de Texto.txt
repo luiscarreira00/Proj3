@@ -1,0 +1,53 @@
+jenkins-operator
+3z7C0EzlZV2mcvD8bMDt
+
+argocd
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+admin
+HjzrMngSn9zKrM6M
+
+
+prometheus
+kubectl port-forward svc/prometheus-kube-prometheus-prometheus -n prometheus 9090:9090
+
+grafana
+kubectl port-forward -n grafana svc/loki-grafana 8082:80
+admin
+iuLZvOYG9AUK4lgxyHCWFTJZHb4UuFng6ZXUtAPo
+
+
+loki
+kubectl port-forward -n grafana svc/loki-loki-distributed-gateway 9092:80
+kubectl port-forward -n grafana svc/loki-loki-distributed-query-frontend 3100:3100
+kubectl port-forward -n grafana svc/loki-loki-distributed-distributor 3100:3100
+http://localhost:3101/loki/api/v1/labels
+
+
+kubectl port-forward -n jaeger svc/jaeger-jaeger-operator-jaeger-query 8083:16686
+
+kubectl port-forward svc/spring-service -n spring 30009:8080
+
+http://localhost:30009/students/Student2/courses
+
+
+
+guardar dashboard como json
+
+cpu / ram metricas
+
+java exporter 
+
+pedidos 200, 500
+
+metricas da aplicaçao
+
+
+mount volume docker para jenkins
+
+
+argocd
+atualizar app no cluster
+
+
+
+kubectl apply -f .

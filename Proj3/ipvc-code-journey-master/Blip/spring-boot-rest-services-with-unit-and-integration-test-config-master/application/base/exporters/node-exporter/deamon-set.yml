@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+    name: node-exporter
+    namespace: spring
+    labels:
+        app: node-exporter-spring
+spec:
+    selector:
+        matchLabels:
+            app: node-exporter-spring
+    template:
+        metadata:
+            labels:
+                app: node-exporter-spring
+        spec:
+            containers:
+                - name: node-exporter
+                  image: quay.io/prometheus/node-exporter:latest
+                  imagePullPolicy: Always
+                  ports:
+                      - containerPort: 9100
